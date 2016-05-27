@@ -153,51 +153,39 @@ def welcome(request, **kwargs):
 
 @never_cache
 def login(request):
-    print 'KHong reader.views login()'
     code = -1
     message = ""
     if request.method == "POST":
         form = LoginForm(request.POST, prefix='login')
         if form.is_valid():
-            print 'KHong reader.views is_valid()'
             login_user(request, form.get_user())
             if request.POST.get('api'):
                 logging.user(form.get_user(), "~FG~BB~SKiPhone Login~FW")
                 code = 1
-                print 'KHong reader.views is_valid() - request.POST.get()'
             else:
                 logging.user(form.get_user(), "~FG~BBLogin~FW")
-                print 'KHong reader.views is_valid() - logging.user() HttpResponseRedirect'
                 return HttpResponseRedirect(reverse('index'))
         else:
             message = form.errors.items()[0][1][0]
-            print 'KHong reader.views is_valid() NOT VALID'
 
     if request.POST.get('api'):
-        print 'KHong reader.views request.POST.get() HttpResponse'
         return HttpResponse(json.encode(dict(code=code, message=message)), mimetype='application/json')
     else:
-        print 'KHong reader.views return index()'
         return index(request)
     
 @never_cache
 def signup(request):
-    print 'KHong reader.views.signup()'
-    print 'KHong reader.views.signup() request.method=',request.method
     if request.method == "POST":
         form = SignupForm(prefix='signup', data=request.POST)
         if form.is_valid():
-            print 'KHong reader.views.signup() form.is_valid()'
             new_user = form.save()
             login_user(request, new_user)
             logging.user(new_user, "~FG~SB~BBNEW SIGNUP: ~FW%s" % new_user.email)
             if not new_user.is_active:
-                print 'KHong reader.views.signup() form.is_valid() if not new_user.is_active'
                 url = "https://%s%s" % (Site.objects.get_current().domain,
                                          reverse('stripe-form'))
                 return HttpResponseRedirect(url)
     
-    print 'KHong reader.views.signup() return index(request)'
     return index(request)
         
 @never_cache

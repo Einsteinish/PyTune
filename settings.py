@@ -248,7 +248,7 @@ TEST_RUNNER             = "utils.testrunner.TestRunner"
 SESSION_COOKIE_NAME     = 'pytune_sessionid'
 SESSION_COOKIE_AGE      = 60*60*24*365 # 1 year
 #SESSION_COOKIE_DOMAIN   = '.pytune.com'
-SENTRY_DSN              = 'https://XXXPYTUNEXXX@app.getsentry.com/99999999'
+#SENTRY_DSN              = 'https://XXXPYTUNEXXX@app.getsentry.com/99999999'
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -571,6 +571,7 @@ S3_AVATARS_BUCKET_NAME = 'avatars.pytune.com'
 
 from local_settings import *
 
+'''
 if not DEBUG:
     INSTALLED_APPS += (
         'raven.contrib.django',
@@ -578,7 +579,9 @@ if not DEBUG:
 
     )
     # RAVEN_CLIENT = raven.Client(dsn=SENTRY_DSN, release=raven.fetch_git_sha(os.path.dirname(__file__)))
-    RAVEN_CLIENT = raven.Client(SENTRY_DSN)
+    # KHong
+    #RAVEN_CLIENT = raven.Client(SENTRY_DSN)
+'''
     
 COMPRESS = not DEBUG
 TEMPLATE_DEBUG = DEBUG
