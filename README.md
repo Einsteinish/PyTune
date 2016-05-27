@@ -3,8 +3,11 @@
  * PyTune is a personal news reader bringing people together 
    to talk about the world. A new sound of an old instrument.
  * [www.pytune.com](http://www.pytune.com).
+ * [Deploy Tutorial](http://bogotobogo.com/python/Django/Python_Django_tutorial_Deploy_Ubuntu_Nginx_uWSGI.php).
+ * Note: The site is still in its early stage.
  * Created by [K Hong](http://www.pytune.com). 
  * Twitter: [@KHong-https://twitter.com/KHongTwit](https://twitter.com/KHongTwit) 
+ 
 
 ## Features
 
@@ -352,7 +355,7 @@ You got the downtime message either through email or SMS. This is the order of o
 
  * Email address: <kihyuck.hong@gmail.com>
  * [@KHong](https://twitter.com/KHongTwit) on Twitter.
- 
+
 
 ## License
 
