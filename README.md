@@ -1,5 +1,6 @@
 # PyTune
 
+ * For an upgrade version (Django 1.8.12), go to [PyTune2](https://github.com/Einsteinish/PyTune2.git) repo. 
  * PyTune is a personal news reader bringing people together 
    to talk about the world. A new sound of an old instrument.
  * [www.pytune.com](http://www.pytune.com).
