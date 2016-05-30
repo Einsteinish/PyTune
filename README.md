@@ -361,3 +361,4 @@ You got the downtime message either through email or SMS. This is the order of o
 ## License
 
 PyTune is licensed under the MIT License. (See LICENSE)
+This repo is based on [NewsBlur](https://github.com/samuelclay/NewsBlur)
